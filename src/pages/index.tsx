@@ -1,47 +1,32 @@
-import { GetServerSideProps } from 'next';
-import { Noto_Sans_JP } from 'next/font/google';
-import { useEffect } from 'react';
-
-const notoSansJp = Noto_Sans_JP({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+import List from '@/components/pages/list';
+import { client } from '@/libs/client';
+import { GetStaticProps } from 'next';
 
 type Props = {
-  weather: {
-    description: {
-      text: string;
-    };
-  };
+  articles: Article[];
 };
 
-const Index = ({ weather }: Props) => {
-  useEffect(() => {
-    console.log(weather);
-  }, []);
+type Article = {
+  id: string;
+  title: string;
+  content: string;
+};
 
+const Index = ({ articles }: Props) => {
   return (
     <>
-      <h1 className={`${notoSansJp.className} text-red-500 font-bold`}>
-        ルート
-      </h1>
-      <h2>{weather.description.text}</h2>
+      <List articles={articles} />
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  console.log('getServerSidePropsFn called');
-  const resWeather = await fetch(
-    'https://weather.tsukumijima.net/api/forecast/city/400040'
-  );
-  const weather = await resWeather.json();
+export default Index;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const articles = await client.get({ endpoint: 'blogs' });
   return {
     props: {
-      weather,
+      articles: articles.contents,
     },
   };
 };
-
-export default Index;
