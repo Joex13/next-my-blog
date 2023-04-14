@@ -1,13 +1,6 @@
-import { Noto_Sans_JP } from 'next/font/google';
 import { Header, Footer } from '@/components/globals';
 import { Pagination } from '@/components/molecules';
 import Link from 'next/link';
-
-const notoSansJp = Noto_Sans_JP({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 type Props = {
   articles: Article[];
@@ -28,7 +21,7 @@ type InfoSearched = {
 
 function List({ articles, infoSearched }: Props) {
   return (
-    <div className={notoSansJp.className}>
+    <>
       <Header />
       <main className="px-2">
         <h1 className={`text-red-500 font-bold mt-4`}>記事一覧</h1>
@@ -48,7 +41,7 @@ function List({ articles, infoSearched }: Props) {
         <Pagination totalCount={infoSearched.totalCount} />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
