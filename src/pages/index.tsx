@@ -1,4 +1,4 @@
-import List from '@/components/pages/List';
+import { List } from '@/components/pages';
 import { client } from '@/libs/client';
 import { GetStaticProps } from 'next';
 
