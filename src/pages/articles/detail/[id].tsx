@@ -13,6 +13,10 @@ function ArticlePage({ article }: any) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({
     endpoint: 'articles',
+    queries: {
+      offset: 0,
+      limit: 99, // 100件取得
+    },
   });
   const paths = data.contents.map(
     (content: any) => `/articles/detail/${content.id}`
