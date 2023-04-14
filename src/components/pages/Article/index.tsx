@@ -6,7 +6,7 @@ export default function ArticleId({ article }: any) {
       <Header />
       <main>
         <h1>{article.title}</h1>
-        <p>{article.publishedAt.slice(0, 10)}</p>
+        <p>日時:{article.publishedAt.slice(0, 10)}</p>
         <div
           dangerouslySetInnerHTML={{
             __html: article.content,

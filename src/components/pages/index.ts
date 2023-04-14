@@ -1,4 +1,4 @@
-import Article from '@/components/pages/Articles';
+import Article from '@/components/pages/Article';
 import List from '@/components/pages/List';
 import Page404 from '@/components/pages/404';
 
