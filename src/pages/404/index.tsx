@@ -1,9 +1,11 @@
-const Page404 = () => {
+import { Page404 } from '@/components/pages';
+
+const Page = () => {
   return (
-    <main>
-      <h1>404です。</h1>
-    </main>
+    <>
+      <Page404 />
+    </>
   );
 };
 
-export default Page404;
+export default Page;
