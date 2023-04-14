@@ -26,7 +26,7 @@ type InfoSearched = {
   limit: number;
 };
 
-const List = ({ articles, infoSearched }: Props) => {
+function List({ articles, infoSearched }: Props) {
   return (
     <div className={notoSansJp.className}>
       <Header />
@@ -38,7 +38,9 @@ const List = ({ articles, infoSearched }: Props) => {
           {articles.map((article: Article) => {
             return (
               <li key={article.id}>
-                <Link href={`/articles/detail/${article.id}`}>{article.title}</Link>
+                <Link href={`/articles/detail/${article.id}`}>
+                  {article.title}
+                </Link>
               </li>
             );
           })}
@@ -48,6 +50,6 @@ const List = ({ articles, infoSearched }: Props) => {
       <Footer />
     </div>
   );
-};
+}
 
 export default List;

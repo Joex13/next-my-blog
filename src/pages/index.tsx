@@ -19,13 +19,13 @@ type InfoSearched = {
   limit: number;
 };
 
-const Index = ({ articles, infoSearched }: Props) => {
+function Index({ articles, infoSearched }: Props) {
   return (
     <>
       <List articles={articles} infoSearched={infoSearched} />
     </>
   );
-};
+}
 
 export default Index;
 

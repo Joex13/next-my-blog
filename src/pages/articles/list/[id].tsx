@@ -6,13 +6,13 @@ type Props = {};
 
 const PER_PAGE = 10;
 
-const Index = ({ articles, infoSearched }: any) => {
+function Index({ articles, infoSearched }: any) {
   return (
     <>
       <List articles={articles} infoSearched={infoSearched} />
     </>
   );
-};
+}
 
 export default Index;
 

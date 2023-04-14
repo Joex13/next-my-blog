@@ -1,4 +1,4 @@
-const NavHeader = () => {
+function NavHeader() {
   return (
     <>
       <nav>
@@ -10,6 +10,6 @@ const NavHeader = () => {
       </nav>
     </>
   );
-};
+}
 
 export default NavHeader;

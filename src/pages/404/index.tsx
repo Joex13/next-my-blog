@@ -1,11 +1,11 @@
 import { Page404 } from '@/components/pages';
 
-const Page = () => {
+function Page() {
   return (
     <>
       <Page404 />
     </>
   );
-};
+}
 
 export default Page;

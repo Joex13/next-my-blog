@@ -2,19 +2,21 @@ import { Article } from '@/components/pages';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { client } from '@/libs/client';
 
-const ArticlePage = ({ article }: any) => {
+function ArticlePage({ article }: any) {
   return (
     <>
       <Article article={article} />
     </>
   );
-};
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({
     endpoint: 'articles',
   });
-  const paths = data.contents.map((content: any) => `/articles/detail/${content.id}`);
+  const paths = data.contents.map(
+    (content: any) => `/articles/detail/${content.id}`
+  );
   return { paths, fallback: false };
 };
 

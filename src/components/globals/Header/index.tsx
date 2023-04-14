@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NavHeader } from '@/components/molecules';
 
-const Header = () => {
+function Header() {
   return (
     <header className="bg-cyan-300 px-2 flex justify-between">
       <h1>
@@ -10,6 +10,6 @@ const Header = () => {
       <NavHeader />
     </header>
   );
-};
+}
 
 export default Header;

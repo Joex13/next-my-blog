@@ -1,6 +1,6 @@
 import { Header, Footer } from '@/components/globals';
 
-export default function ArticleId({ article }: any) {
+function ArticleId({ article }: any) {
   return (
     <>
       <Header />
@@ -17,3 +17,5 @@ export default function ArticleId({ article }: any) {
     </>
   );
 }
+
+export default ArticleId;

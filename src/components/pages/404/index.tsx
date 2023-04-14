@@ -1,6 +1,6 @@
 import { Footer, Header } from '@/components/globals';
 
-const Page404 = () => {
+function Page404 () {
   return (
     <>
       <Header />
