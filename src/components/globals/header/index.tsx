@@ -1,10 +1,12 @@
-import NavHeader from '@/components/molecules/NavHeader';
 import Link from 'next/link';
+import { NavHeader } from '@/components/molecules';
 
 const Header = () => {
   return (
     <header className="bg-cyan-300 px-2 flex justify-between">
-      <h1><Link href="/">AJブログ</Link></h1>
+      <h1>
+        <Link href="/">AJブログ</Link>
+      </h1>
       <NavHeader />
     </header>
   );
