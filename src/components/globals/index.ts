@@ -1,4 +1,4 @@
-import Header from 'src/components/globals/Header';
-import Footer from 'src/components/globals/Footer';
+import Header from '@/components/globals/Header';
+import Footer from '@/components/globals/Footer';
 
 export { Header, Footer };
