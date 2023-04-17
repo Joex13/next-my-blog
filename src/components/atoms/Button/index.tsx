@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 type Props = {
   value: string | number;
-  onClickFn?: Function;
+  onClickFn?: () => void;
 };
 
 function Button({ value, onClickFn }: Props) {
@@ -17,6 +17,7 @@ function Button({ value, onClickFn }: Props) {
     <>
       <button
         className={isDarkMode ? styleDarkMode : styleLightMode}
+        onClick={onClickFn}
       >
         {value}
       </button>
