@@ -21,6 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.contents.map(
     (content: any) => `/articles/detail/${content.id}`
   );
+  
   return { paths, fallback: false };
 };
 
