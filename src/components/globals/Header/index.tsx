@@ -3,7 +3,7 @@ import { NavHeader } from '@/components/molecules';
 
 function Header() {
   return (
-    <header className="bg-cyan-300 px-2 flex justify-between">
+    <header className="bg-cyan-300 px-2 flex justify-between w-full fixed top-0">
       <h1>
         <Link href="/">AJブログ</Link>
       </h1>

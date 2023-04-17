@@ -12,7 +12,7 @@ function CategoriesPage({ articles }: any) {
   return (
     <>
       <Header />
-      <main className="mt-4">
+      <main className="mt-8">
         <nav>
           <ul className="flex flex-col gap-2">
             {articles.map((article: any) => {

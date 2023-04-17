@@ -4,7 +4,7 @@ function Page404 () {
   return (
     <>
       <Header />
-      <main>
+      <main className='mt-8'>
         <h1>404です。</h1>
       </main>
       <Footer />

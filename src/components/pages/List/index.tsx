@@ -23,8 +23,8 @@ function List({ articles, infoSearched }: Props) {
   return (
     <>
       <Header />
-      <main className="px-2">
-        <h1 className={`text-red-500 font-bold mt-4`}>記事一覧</h1>
+      <main className="mt-8 px-2">
+        <h1 className="text-red-500 font-bold">記事一覧</h1>
         <h2>全{infoSearched.totalCount}件中</h2>
         <p>{infoSearched.offset}</p>
         <ul className="flex flex-col gap-4 mt-4">

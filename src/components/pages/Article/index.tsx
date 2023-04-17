@@ -9,7 +9,7 @@ function ArticleId({ article }: any) {
   return (
     <>
       <Header />
-      <main className="mt-4">
+      <main className='mt-8'>
         <div className="text-center">
           <h1 className="font-bold text-2xl">{article.title}</h1>
           <h2 className="mt-2">
