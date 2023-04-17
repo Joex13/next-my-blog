@@ -1,6 +1,8 @@
 import { Header, Footer } from '@/components/globals';
 import { Pagination } from '@/components/molecules';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { toggle } from '@/store/slices/isDarkModeSlice';
 
 type Props = {
   articles: Article[];
@@ -20,11 +22,21 @@ type InfoSearched = {
 };
 
 function List({ articles, infoSearched }: Props) {
+  const dispatch = useDispatch();
+  const toggleDarkMode = () => {
+    dispatch(toggle());
+  };
   return (
     <>
       <Header />
-      <main className="mt-8 px-2">
-        <h1 className="text-red-500 font-bold">記事一覧</h1>
+      <main className="py-8 px-2">
+        <h1 className="font-bold">記事一覧</h1>
+        <button
+          className="text-red-500 hover:cursor-pointer"
+          onClick={toggleDarkMode}
+        >
+          ナイトモードトグル！
+        </button>
         <h2>全{infoSearched.totalCount}件中</h2>
         <p>{infoSearched.offset}</p>
         <ul className="flex flex-col gap-4 mt-4">

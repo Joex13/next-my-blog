@@ -1,16 +1,22 @@
 import { client } from '@/libs/client';
 import { List } from '@/components/pages';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useSelector } from 'react-redux';
 
 type Props = {};
 
 const PER_PAGE = 10;
 
 function Index({ articles, infoSearched }: any) {
+  const isDarkMode = useSelector((state: any) => state.isDarkMode);
   return (
-    <>
+    <div
+      className={
+        isDarkMode ? 'text-white bg-slate-700' : 'text-slate-700 bg-orange-200'
+      }
+    >
       <List articles={articles} infoSearched={infoSearched} />
-    </>
+    </div>
   );
 }
 
