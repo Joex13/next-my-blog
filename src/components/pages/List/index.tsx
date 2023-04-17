@@ -32,7 +32,7 @@ function List({ articles, infoSearched }: Props) {
       <Header />
       <main className="pt-12 px-2">
         <h1 className="font-bold">記事一覧</h1>
-        <Button value={'ナイトモードトグル'} onClickFn={toggleDarkMode} />
+        <Button value={'トグル'} handleClick={toggleDarkMode} />
         <h2>全{infoSearched.totalCount}件中</h2>
         <p>{infoSearched.offset}</p>
         <ul className="flex flex-col gap-4 mt-4">
