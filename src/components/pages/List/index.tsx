@@ -3,6 +3,7 @@ import { Pagination } from '@/components/molecules';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { toggle } from '@/store/slices/isDarkModeSlice';
+import { Button } from '@/components/atoms';
 
 type Props = {
   articles: Article[];
@@ -29,14 +30,9 @@ function List({ articles, infoSearched }: Props) {
   return (
     <>
       <Header />
-      <main className="py-8 px-2">
+      <main className="pt-12 px-2">
         <h1 className="font-bold">記事一覧</h1>
-        <button
-          className="text-red-500 hover:cursor-pointer"
-          onClick={toggleDarkMode}
-        >
-          ナイトモードトグル！
-        </button>
+        <Button value={'ナイトモードトグル'} onClickFn={toggleDarkMode} />
         <h2>全{infoSearched.totalCount}件中</h2>
         <p>{infoSearched.offset}</p>
         <ul className="flex flex-col gap-4 mt-4">

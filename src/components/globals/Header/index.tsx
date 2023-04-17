@@ -3,9 +3,9 @@ import { NavHeader } from '@/components/molecules';
 
 function Header() {
   return (
-    <header className="bg-cyan-300 px-2 flex justify-between w-full fixed top-0">
+    <header className="bg-cyan-300 p-2 flex justify-between w-full fixed top-0">
       <h1>
-        <Link href="/">AJブログ</Link>
+        <Link href="/">Next My Blog</Link>
       </h1>
       <NavHeader />
     </header>

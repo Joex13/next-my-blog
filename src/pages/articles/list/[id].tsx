@@ -8,13 +8,16 @@ type Props = {};
 const PER_PAGE = 10;
 
 function Index({ articles, infoSearched }: any) {
-  const isDarkMode = useSelector((state: any) => state.isDarkMode);
+  const isDarkMode = useSelector((state: any) => state.isDarkMode.isDarkMode);
+  const styleDarkMode = useSelector(
+    (state: any) => state.isDarkMode.styleDarkMode
+  );
+  const styleLightMode = useSelector(
+    (state: any) => state.isDarkMode.styleLightMode
+  );
+
   return (
-    <div
-      className={
-        isDarkMode ? 'text-white bg-slate-700' : 'text-slate-700 bg-orange-200'
-      }
-    >
+    <div className={isDarkMode ? styleDarkMode : styleLightMode}>
       <List articles={articles} infoSearched={infoSearched} />
     </div>
   );
