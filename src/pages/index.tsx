@@ -1,6 +1,6 @@
 import { List } from '@/components/pages';
 import { client } from '@/libs/client';
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSelector } from 'react-redux';
 
 type Props = {
@@ -38,7 +38,7 @@ function Index({ articles, infoSearched }: Props) {
 
 export default Index;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   const articles = await client.get({
     endpoint: 'articles',
     queries: {
