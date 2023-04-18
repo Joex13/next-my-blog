@@ -1,27 +1,25 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle } from '@/store/slices/hamburgerSlice';
 
 type Props = {};
 
 function Hamburger(props: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useSelector((state: any) => state.hamburger.isOpen);
+  const dispatch = useDispatch();
   const handleClick = (): void => {
-    setIsOpen((prev) => !prev);
+    dispatch(toggle());
   };
   return (
     <button
       type="button"
       onClick={handleClick}
-      className={
-        isOpen
-          ? 'md:hidden z-10 flex flex-col h-6'
-          : 'md:hidden z-10 flex flex-col justify-between h-6'
-      }
+      className="md:hidden z-10 h-6 relative"
     >
       <span
         className={
           isOpen
-            ? 'block w-8 h-0.5 bg-slate-950 duration-300 rotate-45'
-            : 'block w-8 h-0.5 bg-slate-950 duration-300'
+            ? 'block w-8 h-0.5 bg-slate-950 duration-300 rotate-45 top-1/2'
+            : 'block w-8 h-0.5 bg-slate-950 duration-300 absolute top-0'
         }
       />
       <span
@@ -34,8 +32,8 @@ function Hamburger(props: Props) {
       <span
         className={
           isOpen
-            ? 'block w-8 h-0.5 bg-slate-950 duration-300 -rotate-45'
-            : 'block w-8 h-0.5 bg-slate-950 duration-300'
+            ? 'block w-8 h-0.5 bg-slate-950 duration-300 -rotate-45 absolute bottom-1/2'
+            : 'block w-8 h-0.5 bg-slate-950 duration-300 absolute bottom-0'
         }
       />
     </button>
