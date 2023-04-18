@@ -8,12 +8,12 @@ type Props = {};
 const PER_PAGE = 10;
 
 function Index({ articles, infoSearched }: any) {
-  const isDarkMode = useSelector((state: any) => state.isDarkMode.isDarkMode);
+  const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   const styleDarkMode = useSelector(
-    (state: any) => state.isDarkMode.styleDarkMode
+    (state: any) => state.darkMode.styleDarkMode
   );
   const styleLightMode = useSelector(
-    (state: any) => state.isDarkMode.styleLightMode
+    (state: any) => state.darkMode.styleLightMode
   );
 
   return (
@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
     [...Array(end - start + 1)].map((_, i) => start + i);
 
   const paths = range(1, Math.ceil(articles.totalCount / PER_PAGE)).map(
-    (article) => `/articles/list/${article}`
+    (article) => `/articles/${article}`
   );
 
   return { paths, fallback: false };

@@ -2,7 +2,7 @@ import { Header, Footer } from '@/components/globals';
 import { Pagination } from '@/components/molecules';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-import { toggle } from '@/store/slices/isDarkModeSlice';
+import { toggle } from '@/store/slices/darkModeSlice';
 import { Button } from '@/components/atoms';
 
 type Props = {
@@ -28,7 +28,7 @@ function List({ articles, infoSearched }: Props) {
     dispatch(toggle());
   };
   return (
-    <>
+    <div>
       <Header />
       <main className="pt-12 px-2">
         <h1 className="font-bold">記事一覧</h1>
@@ -49,7 +49,7 @@ function List({ articles, infoSearched }: Props) {
         <Pagination totalCount={infoSearched.totalCount} />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

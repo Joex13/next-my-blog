@@ -21,12 +21,12 @@ type InfoSearched = {
 };
 
 function Index({ articles, infoSearched }: Props) {
-  const isDarkMode = useSelector((state: any) => state.isDarkMode.isDarkMode);
+  const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   const styleDarkMode = useSelector(
-    (state: any) => state.isDarkMode.styleDarkMode
+    (state: any) => state.darkMode.styleDarkMode
   );
   const styleLightMode = useSelector(
-    (state: any) => state.isDarkMode.styleLightMode
+    (state: any) => state.darkMode.styleLightMode
   );
 
   return (

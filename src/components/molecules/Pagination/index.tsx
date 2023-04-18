@@ -16,7 +16,7 @@ function Pagination({ totalCount }: Props) {
         {range(1, Math.ceil(totalCount / PER_PAGE)).map(
           (number: number, index: number) => (
             <li className="bg-teal-400 p-2" key={index}>
-              <Link href={`/articles/list/${number}`}>{number}</Link>
+              <Link href={`/articles/${number}`}>{number}</Link>
             </li>
           )
         )}
