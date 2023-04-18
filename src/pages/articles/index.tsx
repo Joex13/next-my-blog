@@ -23,7 +23,7 @@ type InfoSearched = {
 function Index({ articles, infoSearched }: Props) {
   const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   return (
-    <div className={isDarkMode ? "text-white bg-slate-700" : "text-slate-700 bg-orange-200"}>
+    <div>
       <List articles={articles} infoSearched={infoSearched} />
     </div>
   );

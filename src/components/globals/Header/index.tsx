@@ -5,13 +5,7 @@ import { useSelector } from 'react-redux';
 function Header() {
   const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   return (
-    <header
-      className={
-        isDarkMode
-          ? 'bg-slate-950 w-full fixed top-0 p-4'
-          : 'bg-orange-400 w-full fixed top-0 p-4'
-      }
-    >
+    <header>
       <div className="flex justify-between max-w-screen-lg mx-auto">
         <h1>
           <Link href="/" className="font-bold text-2xl">

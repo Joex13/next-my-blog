@@ -17,7 +17,7 @@ function Index({ articles, infoSearched }: any) {
   );
 
   return (
-    <div className={isDarkMode ? styleDarkMode : styleLightMode}>
+    <div>
       <List articles={articles} infoSearched={infoSearched} />
     </div>
   );

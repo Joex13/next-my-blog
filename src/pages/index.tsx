@@ -30,11 +30,7 @@ function Index({ articles, infoSearched }: Props) {
   );
 
   return (
-    <div
-      className={
-        +isDarkMode ? styleDarkMode + ' h-screen' : styleLightMode + ' h-screen'
-      }
-    >
+    <div>
       <List articles={articles} infoSearched={infoSearched} />
     </div>
   );
