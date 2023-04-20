@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
-import { Heading } from '@/components/Base';
 
 function Header() {
   const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
@@ -10,6 +9,16 @@ function Header() {
         <Link href="/" className="font-bold text-2xl">
           Next My Blog
         </Link>
+        <nav className='my-auto'>
+          <ul className="flex gap-4">
+            <li>
+              <Link href="/articles/1">記事一覧</Link>
+            </li>
+            <li>
+              <Link href="/categories">カテゴリ一覧</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

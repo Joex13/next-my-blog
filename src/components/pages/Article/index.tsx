@@ -1,11 +1,7 @@
-import { Header, Footer, Heading, TextBox } from '@/components/Base';
-import { useEffect } from 'react';
+import { Header, Footer, Heading, TextBox, Post } from '@/components/Base';
 import Link from 'next/link';
 
 function ArticleId({ article }: any) {
-  useEffect(() => {
-    console.log(article);
-  }, []);
   return (
     <>
       <Header />
@@ -29,12 +25,7 @@ function ArticleId({ article }: any) {
             投稿時間:{article.publishedAt.slice(0, 10)}
           </TextBox>
         </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: article.content,
-          }}
-          className="mt-4"
-        />
+        <Post innerHtml={article.content} />
       </main>
       <Footer />
     </>
