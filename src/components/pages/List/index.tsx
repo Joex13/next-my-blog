@@ -35,7 +35,7 @@ function List({ articles, infoSearched }: Props) {
       <main className="mt-4 px-4">
         <div className="max-w-screen-lg mx-auto">
           <Heading level={2}>全{infoSearched.totalCount}件中</Heading>
-          <TextBox>{infoSearched.offset}</TextBox>
+          <TextBox>{infoSearched.offset + 1}件目〜</TextBox>
           <ArticleList articles={articles} />
           <Pagination totalCount={infoSearched.totalCount} />
         </div>
