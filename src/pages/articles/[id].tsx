@@ -9,23 +9,20 @@ type Props = {};
 const PER_PAGE = 10;
 
 function Index({ articles, infoSearched }: any) {
-  const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
-  const styleDarkMode = useSelector(
-    (state: any) => state.darkMode.styleDarkMode
-  );
-  const styleLightMode = useSelector(
-    (state: any) => state.darkMode.styleLightMode
-  );
-
-  useEffect(() => {
-    console.log(articles);
-  }, []);
+  // const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
+  // const styleDarkMode = useSelector(
+  //   (state: any) => state.darkMode.styleDarkMode
+  // );
+  // const styleLightMode = useSelector(
+  //   (state: any) => state.darkMode.styleLightMode
+  // );
 
   return (
-    <div>
+    <>
       <List articles={articles} infoSearched={infoSearched} />
-    </div>
+    </>
   );
+  
 }
 
 export default Index;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import NextImage from 'next/image';
+import Image from 'next/image';
+import TextBox from '../TextBox';
 
 type Props = {
   article: {
@@ -19,10 +20,10 @@ const Card: React.FC<Props> = ({ article, bgColor }) => {
   return (
     <li
       key={article.id}
-      className={"flex flex-col p-2 text-center h-80 " + bgColor}
+      className={'flex flex-col p-2 text-center h-80 ' + bgColor}
     >
       <div className="relative aspect-square">
-        <NextImage
+        <Image
           // className="object-fill"
           src={article.eyecatch.url}
           alt={article.title}
@@ -30,9 +31,9 @@ const Card: React.FC<Props> = ({ article, bgColor }) => {
         />
       </div>
       <Link className="relative" href={`/articles/detail/${article.id}`}>
-        <span>{article.title}</span>
+        <span>{article.title.slice(0, 30)}</span>
       </Link>
-      <span>{article.createdAt.slice(0, 10)}</span>
+      <TextBox>{article.createdAt.slice(0, 10)}</TextBox>
     </li>
   );
 };

@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { client } from '@/libs/client';
 import { Header, Footer } from '@/components/Base';
 import { useEffect } from 'react';
+import { CategoryList } from '@/components/Domain';
 
 function CategoriesPage({ categories }: any) {
   useEffect(() => {
@@ -12,7 +13,7 @@ function CategoriesPage({ categories }: any) {
     <>
       <Header />
       <main className="mt-8">
-        カテゴリ
+        <CategoryList categories={categories} />
       </main>
       <Footer />
     </>

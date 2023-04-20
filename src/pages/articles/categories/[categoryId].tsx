@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { client } from '@/libs/client';
-import { Header, Footer } from '@/components/globals';
+import { Header, Footer } from '@/components/Base';
 import Link from 'next/link';
 import { useEffect } from 'react';
 

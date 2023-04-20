@@ -1,14 +1,16 @@
 import React from 'react';
 
 type Props = {
-  className: string;
-  children: React.ReactNode;
+  className?: string;
+  children: any;
 };
 
 const List = ({ children, className }: Props) => {
   return (
     <nav>
-      <ul className={className}>{children}</ul>
+      <ul className={className}>
+        {children}
+      </ul>
     </nav>
   );
 };
