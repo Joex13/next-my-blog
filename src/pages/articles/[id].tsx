@@ -2,6 +2,7 @@ import { client } from '@/libs/client';
 import { List } from '@/components/pages';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 type Props = {};
 
@@ -15,6 +16,10 @@ function Index({ articles, infoSearched }: any) {
   const styleLightMode = useSelector(
     (state: any) => state.darkMode.styleLightMode
   );
+
+  useEffect(() => {
+    console.log(articles);
+  }, []);
 
   return (
     <div>

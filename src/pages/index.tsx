@@ -1,7 +1,6 @@
 import { List } from '@/components/pages';
 import { client } from '@/libs/client';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useEffect } from 'react';
+import { GetStaticProps } from 'next';
 import { useSelector } from 'react-redux';
 
 const PER_PAGE = 10;
@@ -16,6 +15,9 @@ type Article = {
   title: string;
   content: string;
   createdAt: string;
+  eyecatch: {
+    url: string;
+  };
 };
 
 type InfoSearched = {
@@ -25,9 +27,6 @@ type InfoSearched = {
 };
 
 function Index({ articles, infoSearched }: Props) {
-  useEffect(() => {
-    console.log(articles);
-  }, []);
   const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   const styleDarkMode = useSelector(
     (state: any) => state.darkMode.styleDarkMode

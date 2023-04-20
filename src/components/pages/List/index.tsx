@@ -1,6 +1,8 @@
 import { Header, Footer } from '@/components/globals';
 import { Pagination } from '@/components/molecules';
 import Link from 'next/link';
+import NextImage from 'next/image';
+
 type Props = {
   articles: Article[];
   infoSearched: InfoSearched;
@@ -11,6 +13,9 @@ type Article = {
   title: string;
   content: string;
   createdAt: string;
+  eyecatch: {
+    url: string;
+  };
 };
 
 type InfoSearched = {
@@ -32,10 +37,21 @@ function List({ articles, infoSearched }: Props) {
               return (
                 <li
                   key={article.id}
-                  className="flex flex-col bg-cyan-400 px-2 text-center min-h-[250px]"
+                  className="flex flex-col bg-cyan-400 p-2 text-center h-80"
                 >
-                  <Link href={`/articles/detail/${article.id}`}>
-                    {article.title}
+                  <div className="relative aspect-square">
+                    <NextImage
+                      // className="object-fill"
+                      src={article.eyecatch.url}
+                      alt={article.title}
+                      fill
+                    />
+                  </div>
+                  <Link
+                    className="relative"
+                    href={`/articles/detail/${article.id}`}
+                  >
+                    <span>{article.title}</span>
                   </Link>
                   <span>{article.createdAt.slice(0, 10)}</span>
                 </li>

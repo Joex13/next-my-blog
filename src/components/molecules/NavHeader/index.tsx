@@ -5,7 +5,7 @@ function NavHeader() {
   return (
     <>
       <nav className="my-auto">
-        <ul className="hidden md:flex gap-4">
+        <ul className="fixed top-0 left-[100%] md:flex md:static gap-4">
           <li>
             <Link href="/articles">記事一覧</Link>
           </li>
