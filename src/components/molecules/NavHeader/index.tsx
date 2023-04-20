@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Hamburger } from '@/components/atoms';
 
 function NavHeader() {
   return (
@@ -16,7 +15,6 @@ function NavHeader() {
             <Link href="">Contact</Link>
           </li>
         </ul>
-        <Hamburger />
       </nav>
     </>
   );
