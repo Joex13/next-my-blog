@@ -4,8 +4,6 @@ import { Header, Footer } from '@/components/Base';
 import { CategoryList } from '@/components/Domain';
 
 function CategoriesPage({ categories }: any) {
-  console.log(categories);
-
   return (
     <>
       <Header />
