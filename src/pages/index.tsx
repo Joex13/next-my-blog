@@ -27,6 +27,7 @@ type InfoSearched = {
 };
 
 function Index({ articles, infoSearched }: Props) {
+  console.log('index');
   // const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   // const styleDarkMode = useSelector(
   //   (state: any) => state.darkMode.styleDarkMode
