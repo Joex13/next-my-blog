@@ -1,14 +1,9 @@
 import { GetStaticProps } from 'next';
 import { client } from '@/libs/client';
 import { Header, Footer } from '@/components/Base';
-import { useEffect } from 'react';
 import { CategoryList } from '@/components/Domain';
 
 function CategoriesPage({ categories }: any) {
-  useEffect(() => {
-    console.log(categories);
-  }, []);
-
   return (
     <>
       <Header />
