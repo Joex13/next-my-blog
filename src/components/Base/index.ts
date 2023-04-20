@@ -5,5 +5,17 @@ import Header from './Header';
 import Footer from './Footer';
 import Card from './Card';
 import Heading from './Heading';
+import TextBox from './TextBox';
+import List from './List';
 
-export { Button, Card, Footer, Hamburger, Header, Heading, Pagination };
+export {
+  Button,
+  Card,
+  Footer,
+  Hamburger,
+  Header,
+  Heading,
+  Pagination,
+  TextBox,
+  List,
+};

@@ -15,8 +15,8 @@ function Pagination({ totalCount }: Props) {
       <ul className="flex gap-2 mx-auto">
         {range(1, Math.ceil(totalCount / PER_PAGE)).map(
           (number: number, index: number) => (
-            <li className="bg-teal-400 p-2" key={index}>
-              <Link href={`/articles/${number}`}>{number}</Link>
+            <li className="bg-cyan-400" key={index}>
+              <Link className='p-4' href={`/articles/${number}`}>{number}</Link>
             </li>
           )
         )}

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { NavHeader } from '@/components/molecules';
 import { useSelector } from 'react-redux';
 import { Heading } from '@/components/Base';
 
@@ -8,12 +7,9 @@ function Header() {
   return (
     <header className="p-4 bg-orange-200">
       <div className="flex justify-between max-w-screen-lg mx-auto">
-        <Heading level={1}>
-          <Link href="/" className="font-bold text-2xl">
-            Next My Blog
-          </Link>
-        </Heading>
-        <NavHeader />
+        <Link href="/" className="font-bold text-2xl">
+          Next My Blog
+        </Link>
       </div>
     </header>
   );

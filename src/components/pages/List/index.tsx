@@ -1,7 +1,11 @@
-import { Header, Footer, Pagination } from '@/components/Base';
-import { ArticleCard } from '@/components/Domain';
-import Link from 'next/link';
-import NextImage from 'next/image';
+import {
+  Header,
+  Footer,
+  Pagination,
+  TextBox,
+  Heading,
+} from '@/components/Base';
+import { ArticleList } from '@/components/Domain';
 
 type Props = {
   articles: Article[];
@@ -26,22 +30,18 @@ type InfoSearched = {
 
 function List({ articles, infoSearched }: Props) {
   return (
-    <div>
+    <>
       <Header />
       <main className="mt-4 px-4">
         <div className="max-w-screen-lg mx-auto">
-          <h2>全{infoSearched.totalCount}件中</h2>
-          <p>{infoSearched.offset}</p>
-          <ul className="grid grid-cols-2 gap-4 mt-4">
-            {articles.map((article: Article) => {
-              return <ArticleCard key={article.id} article={article} />;
-            })}
-          </ul>
+          <Heading level={2}>全{infoSearched.totalCount}件中</Heading>
+          <TextBox>{infoSearched.offset}</TextBox>
+          <ArticleList articles={articles} />
           <Pagination totalCount={infoSearched.totalCount} />
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

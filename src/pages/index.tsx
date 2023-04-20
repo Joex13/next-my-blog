@@ -36,9 +36,9 @@ function Index({ articles, infoSearched }: Props) {
   );
 
   return (
-    <div>
+    <>
       <List articles={articles} infoSearched={infoSearched} />
-    </div>
+    </>
   );
 }
 

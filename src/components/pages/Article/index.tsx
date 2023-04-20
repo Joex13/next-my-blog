@@ -1,4 +1,4 @@
-import { Header, Footer } from '@/components/Base';
+import { Header, Footer, Heading, TextBox } from '@/components/Base';
 import { useEffect } from 'react';
 import Link from 'next/link';
 
@@ -9,10 +9,12 @@ function ArticleId({ article }: any) {
   return (
     <>
       <Header />
-      <main className='mt-8'>
+      <main className="mt-8">
         <div className="text-center">
-          <h1 className="font-bold text-2xl">{article.title}</h1>
-          <h2 className="mt-2">
+          <Heading level={2} className="font-bold text-2xl">
+            {article.title}
+          </Heading>
+          <Heading level={3} className="mt-2">
             {article.category ? (
               <>
                 <Link href={`/articles/categories/${article.category.id}`}>
@@ -22,8 +24,10 @@ function ArticleId({ article }: any) {
             ) : (
               'カテゴリー設定なし'
             )}
-          </h2>
-          <p className="mt-2">投稿時間:{article.publishedAt.slice(0, 10)}</p>
+          </Heading>
+          <TextBox className="mt-2">
+            投稿時間:{article.publishedAt.slice(0, 10)}
+          </TextBox>
         </div>
         <div
           dangerouslySetInnerHTML={{

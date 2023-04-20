@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { client } from '@/libs/client';
-import { Header, Footer } from '@/components/globals';
-import Link from 'next/link';
+import { Header, Footer } from '@/components/Base';
+import { CategoryList } from '@/components/Domain';
 import { useEffect } from 'react';
 
 function CategoriesPage({ categories }: any) {
@@ -13,19 +13,7 @@ function CategoriesPage({ categories }: any) {
     <>
       <Header />
       <main className="mt-8">
-        <nav>
-          <ul className="flex flex-col gap-2">
-            {categories.map((category: any) => {
-              return (
-                <li key={category.id}>
-                  <Link href={`/articles/categories/${category.id}`}>
-                    {category.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <CategoryList>{categories}</CategoryList>
       </main>
       <Footer />
     </>

@@ -1,15 +1,15 @@
-import { Footer, Header } from '@/components/Base';
+import { Footer, Header, Heading } from '@/components/Base';
 
-function Page404 () {
+function Page404() {
   return (
     <>
       <Header />
-      <main className='mt-8'>
-        <h1>404です。</h1>
+      <main className="mt-8">
+        <Heading level={1}>404です。</Heading>
       </main>
       <Footer />
     </>
   );
-};
+}
 
 export default Page404;
