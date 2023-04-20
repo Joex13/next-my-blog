@@ -1,17 +1,18 @@
 import Link from 'next/link';
 import { NavHeader } from '@/components/molecules';
 import { useSelector } from 'react-redux';
+import { Heading } from '@/components/Base';
 
 function Header() {
   const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   return (
-    <header className='p-4 bg-orange-200'>
+    <header className="p-4 bg-orange-200">
       <div className="flex justify-between max-w-screen-lg mx-auto">
-        <h1>
+        <Heading level={1}>
           <Link href="/" className="font-bold text-2xl">
             Next My Blog
           </Link>
-        </h1>
+        </Heading>
         <NavHeader />
       </div>
     </header>

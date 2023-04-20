@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/components/globals';
+import { Footer, Header } from '@/components/Base';
 
 function Page404 () {
   return (

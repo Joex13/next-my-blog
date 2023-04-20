@@ -1,4 +1,3 @@
-import NavHeader from '@/components/molecules/NavHeader';
-import Pagination from '@/components/molecules/Pagination';
+import NavHeader from '@/components/molecules/HeaderNav';
 
-export { NavHeader, Pagination };
+export { NavHeader };

@@ -1,4 +1,4 @@
-import { List } from '@/components/pages';
+import { List } from '@/components/Pages';
 import { client } from '@/libs/client';
 import { GetStaticProps } from 'next';
 import { useSelector } from 'react-redux';

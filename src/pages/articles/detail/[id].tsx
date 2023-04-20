@@ -1,4 +1,4 @@
-import { Article } from '@/components/pages';
+import { Article } from '@/components/Pages';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { client } from '@/libs/client';
 

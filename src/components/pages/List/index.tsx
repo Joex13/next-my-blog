@@ -1,5 +1,5 @@
-import { Header, Footer } from '@/components/globals';
-import { Pagination } from '@/components/molecules';
+import { Header, Footer, Pagination } from '@/components/Base';
+import { ArticleCard } from '@/components/Domain';
 import Link from 'next/link';
 import NextImage from 'next/image';
 
@@ -34,28 +34,7 @@ function List({ articles, infoSearched }: Props) {
           <p>{infoSearched.offset}</p>
           <ul className="grid grid-cols-2 gap-4 mt-4">
             {articles.map((article: Article) => {
-              return (
-                <li
-                  key={article.id}
-                  className="flex flex-col bg-cyan-400 p-2 text-center h-80"
-                >
-                  <div className="relative aspect-square">
-                    <NextImage
-                      // className="object-fill"
-                      src={article.eyecatch.url}
-                      alt={article.title}
-                      fill
-                    />
-                  </div>
-                  <Link
-                    className="relative"
-                    href={`/articles/detail/${article.id}`}
-                  >
-                    <span>{article.title}</span>
-                  </Link>
-                  <span>{article.createdAt.slice(0, 10)}</span>
-                </li>
-              );
+              return <ArticleCard key={article.id} article={article} />;
             })}
           </ul>
           <Pagination totalCount={infoSearched.totalCount} />

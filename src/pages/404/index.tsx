@@ -1,4 +1,4 @@
-import { Page404 } from '@/components/pages';
+import { Page404 } from '@/components/Pages';
 
 function Page() {
   return (

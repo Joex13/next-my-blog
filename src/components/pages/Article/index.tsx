@@ -1,4 +1,4 @@
-import { Header, Footer } from '@/components/globals';
+import { Header, Footer } from '@/components/Base';
 import { useEffect } from 'react';
 import Link from 'next/link';
 

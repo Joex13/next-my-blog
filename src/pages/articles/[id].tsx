@@ -1,5 +1,5 @@
 import { client } from '@/libs/client';
-import { List } from '@/components/pages';
+import { List } from '@/components/Pages';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';

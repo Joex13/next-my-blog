@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header } from '@/components/globals';
+import { Footer, Header } from '@/components/Base';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 function Categories() {
