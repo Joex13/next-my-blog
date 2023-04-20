@@ -12,11 +12,9 @@ function ArticleId({ article }: any) {
           </Heading>
           <Heading level={3} className="mt-2">
             {article.category ? (
-              <>
-                <Link href={`/articles/categories/${article.category.id}`}>
-                  {article.category.name}
-                </Link>
-              </>
+              <Link href={`/articles/categories/${article.category.id}`}>
+                {article.category.name}
+              </Link>
             ) : (
               'カテゴリー設定なし'
             )}
