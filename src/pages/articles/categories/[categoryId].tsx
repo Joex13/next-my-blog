@@ -1,31 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { client } from '@/libs/client';
 import { Header, Footer } from '@/components/Base';
-import Link from 'next/link';
-import { useEffect } from 'react';
+import { CategoryList } from '@/components/Domain';
 
-function CategoriesPage({ articles }: any) {
-  useEffect(() => {
-    console.log(articles);
-  }, []);
+function CategoriesPage({ categories }: any) {
 
   return (
     <>
       <Header />
       <main className="mt-8">
-        <nav>
-          <ul className="flex flex-col gap-2">
-            {articles.map((article: any) => {
-              return (
-                <li key={article.id}>
-                  <Link href={`/articles/detail/${article.id}`}>
-                    {article.title}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <CategoryList categories={categories} />
       </main>
       <Footer />
     </>
