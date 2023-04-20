@@ -8,7 +8,7 @@ type Props = {};
 
 const PER_PAGE = 10;
 
-function Index({ articles, infoSearched }: any) {
+function ArticleListPage({ articles, infoSearched }: any) {
   // const isDarkMode = useSelector((state: any) => state.darkMode.isDarkMode);
   // const styleDarkMode = useSelector(
   //   (state: any) => state.darkMode.styleDarkMode
@@ -25,7 +25,7 @@ function Index({ articles, infoSearched }: any) {
   
 }
 
-export default Index;
+export default ArticleListPage;
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const articles = await client.get({ endpoint: 'articles' });

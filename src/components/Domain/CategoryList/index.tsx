@@ -11,7 +11,7 @@ const CategoryList = ({ categories, className }: Props) => {
     <>
       <List className={className}>
         {categories.map((item: any) => {
-          return <li key={item.id}>{item.name}</li>;
+          return <li key={item.id}>{item.title}</li>;
         })}
       </List>
     </>

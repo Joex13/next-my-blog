@@ -4,6 +4,7 @@ import { Header, Footer } from '@/components/Base';
 import { CategoryList } from '@/components/Domain';
 
 function CategoriesPage({ categories }: any) {
+  console.log(categories);
 
   return (
     <>
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   return {
     props: {
-      articles: data.contents,
+      categories: data.contents,
     },
   };
 };
